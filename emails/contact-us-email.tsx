@@ -8,17 +8,12 @@ import {
 	Tailwind,
 	Text
 } from '@react-email/components';
-import * as React from 'react';
 
 type ContactEmailProps = {
 	email: string;
 	message: string;
 	name: string;
 };
-
-const baseUrl = process.env.VERCEL_URL
-	? `https://${process.env.VERCEL_URL}`
-	: '';
 
 export const ContactEmail = ({ email, message, name }: ContactEmailProps) => (
 	<Html>

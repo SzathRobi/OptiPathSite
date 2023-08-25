@@ -27,6 +27,7 @@ const NewsletterForm = ({ setIsDialogOpen }: NewsletterFormProps) => {
 
 		if (email.length === 0) {
 			setErrorMessage('Email is required.');
+
 			setTimeout(() => {
 				setErrorMessage(null);
 			}, 3000);

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Release = () => {
 	return (
 		<section className="mb-48 md:mb-64">

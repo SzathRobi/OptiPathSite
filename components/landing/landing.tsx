@@ -1,5 +1,4 @@
 import NewsletterDialog from '../newsletter/newsletter-dialog';
-import { Button } from '../ui/button';
 
 const Landing = () => {
 	return (

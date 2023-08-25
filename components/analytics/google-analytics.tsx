@@ -6,25 +6,21 @@ import { useEffect } from 'react';
 
 import { pageview } from '@/lib/analytics/gtag-helper';
 
-export default function GoogleAnalytics({
-	GA_MEASUREMENT_ID
-}: {
-	GA_MEASUREMENT_ID: string;
-}) {
+export default function GoogleAnalytics() {
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
 	useEffect(() => {
 		const url = pathname + searchParams.toString();
 
-		pageview(GA_MEASUREMENT_ID, url);
-	}, [pathname, searchParams, GA_MEASUREMENT_ID]);
+		pageview(process.env.GA_MEASUREMENT_ID || '', url);
+	}, [pathname, searchParams, process.env.GA_MEASUREMENT_ID]);
 
 	return (
 		<>
 			<Script
 				strategy="afterInteractive"
-				src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
 			/>
 			<Script
 				id="google-analytics"
@@ -39,7 +35,7 @@ export default function GoogleAnalytics({
                     'analytics_storage': 'denied'
                 });
                 
-                gtag('config', '${GA_MEASUREMENT_ID}', {
+                gtag('config', '${process.env.GA_MEASUREMENT_ID}', {
                     page_path: window.location.pathname,
                 });
                 `

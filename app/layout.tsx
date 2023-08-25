@@ -2,10 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
-import Header from '@/components/header';
 import GoogleAnalytics from '@/components/analytics/google-analytics';
 import CookieBanner from '@/components/analytics/cookie-banner';
-import Footer from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +19,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<GoogleAnalytics GA_MEASUREMENT_ID="G-9LRGBMQP2V" />
+			<GoogleAnalytics />
 			<body className={inter.className}>
 				<ThemeProvider
 					attribute="class"

@@ -37,10 +37,13 @@ const Contact = () => {
 		};
 
 		try {
-			const response = await fetch('http://localhost:3000/api/contact', {
-				method: 'POST',
-				body: JSON.stringify(bodyObject)
-			});
+			const response = await fetch(
+				`${process.env.VERCEL_URL}/api/contact`,
+				{
+					method: 'POST',
+					body: JSON.stringify(bodyObject)
+				}
+			);
 
 			setFeedbackMessage('Your message was succesfully delivered!');
 		} catch (error) {

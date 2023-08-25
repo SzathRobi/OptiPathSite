@@ -9,22 +9,17 @@ import {
 	DialogTrigger
 } from '@/components/ui/dialog';
 import { gaEvent } from '@/lib/analytics/gtag-helper';
-import { useState } from 'react';
 import { Button } from '../ui/button';
 import NewsletterForm from './newsletter-form';
 
 const NewsletterDialog = () => {
-	const [isDoilogOpen, setIsDialogOpen] = useState<boolean>(false);
-
 	const handleDialogOpen = () => {
-		// gaEvent({
-		// 	action: 'engagement',
-		// 	params: {
-		// 		message: 'Newsletter dialog button clicked'
-		// 	}
-		// });
-
-		setIsDialogOpen(true);
+		gaEvent({
+			action: 'engagement',
+			params: {
+				message: 'Newsletter dialog button clicked'
+			}
+		});
 	};
 
 	return (
@@ -40,7 +35,7 @@ const NewsletterDialog = () => {
 					<DialogDescription>
 						Don't miss the latest updates and opportunities.
 					</DialogDescription>
-					<NewsletterForm setIsDialogOpen={setIsDialogOpen} />
+					<NewsletterForm />
 				</DialogHeader>
 			</DialogContent>
 		</Dialog>

@@ -7,7 +7,7 @@ const Header = () => {
 		<header className="w-full bg-primary-foreground/5 backdrop-blur-md py-4 fixed z-50">
 			<div className="container flex items-center justify-between">
 				<div>
-					<Link aria-label="Home" href="/" passHref>
+					<Link aria-label="Home" href="/">
 						<Image
 							src="/images/logo-md.png"
 							width={90}

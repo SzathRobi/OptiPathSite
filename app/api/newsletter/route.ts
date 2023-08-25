@@ -35,7 +35,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 		const emailRes = await resend.emails.send({
 			from: 'OptiPath <onboarding@resend.dev>',
 			to: [email],
-			subject: 'Hello from the OptiPaths Newsletter!',
+			subject: "Hello from the OptiPath's Team!",
 			react: NewsletterWelcomeEmail({
 				optiPathEmail: process.env.OPTIPATH_EMAIL || '',
 				optiPathSiteUrl: process.env.OPTIPATH_SITE_URL || ''

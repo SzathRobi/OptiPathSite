@@ -4,7 +4,7 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
+		--background: 0 0% 95%;
 		--foreground: 222.2 84% 4.9%;
 
 		--card: 0 0% 100%;
@@ -14,7 +14,7 @@
 		--popover-foreground: 222.2 84% 4.9%;
 
 		--primary: 142.1 76.2% 36.3%;
-		--primary-foreground: 222.2 84% 4.9%;
+		--primary-foreground: 0 0% 100%;
 
 		--secondary: 210 40% 96.1%;
 		--secondary-foreground: 142.1 76.2% 36.3%;
@@ -69,6 +69,11 @@
 @layer base {
 	* {
 		@apply border-border;
+	}
+	html {
+		overflow-y: scroll;
+		scroll-behavior: smooth;
+		scroll-padding: 48px;
 	}
 	body {
 		@apply bg-background text-foreground;

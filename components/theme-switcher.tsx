@@ -17,7 +17,11 @@ const ThemeSwitcher = () => {
 	};
 
 	return (
-		<Button variant="ghost" onClick={handleThemeSwitch}>
+		<Button
+			variant="ghost"
+			aria-label={`toggle ${theme} theme`}
+			onClick={handleThemeSwitch}
+		>
 			{theme === 'dark' ? (
 				<HiOutlineMoon size={24} />
 			) : (

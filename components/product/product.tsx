@@ -1,53 +1,55 @@
+import { Lang } from '@/types/lang.type';
 import Image from 'next/image';
 import React from 'react';
+import { productTranslations } from './translations';
 
-const Product = () => {
+type ProductProps = {
+	lang: Lang;
+};
+
+const Product = ({ lang }: ProductProps) => {
 	return (
 		<section className="mb-48 md:mb-64" id="product-section">
-			<article className="flex flex-col md:flex-row items-center justify-between mb-56">
-				<div className="max-w-md mb-16 md:mb-0">
-					<p className="text-4xl font-medium mb-6">The propblem</p>
+			<h3 className="text-2xl text-center mb-16 md:mb-24">
+				{productTranslations.productTitle[lang]}
+			</h3>
+
+			<article className="flex flex-col sm:flex-row gap-4 items-center justify-between mb-56">
+				<div className="max-w-lg mb-16 sm:mb-0">
+					<h3 className="text-4xl font-medium mb-6">
+						{productTranslations.theProblemTitle[lang]}
+					</h3>
 					<p className="text-2xl">
-						The lack of optimal route planning and time management
-						can hinder efficient workflow.
+						{productTranslations.theProblemText[lang]}
 					</p>
 				</div>
 
-				<div className="relative min-h-[28rem] w-full md:w-5/12 bg-gray-700">
-					<Image
-						src="/images/the-problem.jpg"
-						className="rounded shadow-md shadow-black/40"
-						fill
-						alt="very busy man with many tasks and places to go"
-					/>
-					<div className="absolute top-32 md:top-16 -left-6 md:-left-24 w-4/6 md:w-1/2 h-5/6 md:h-full">
-						<Image
-							src="/images/traffic-jam.jpg"
-							className="rounded shadow-md shadow-black/40"
-							fill
-							alt="big traffic jam in a city"
-						/>
-					</div>
-				</div>
+				<Image
+					src="/images/the-problem.png"
+					className="rounded"
+					width={700}
+					height={583}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+					alt={productTranslations.theProblemImageAltText[lang]}
+				/>
 			</article>
 
-			<article className="flex md:flex-row flex-col-reverse items-center justify-between mb-20">
-				<div className="relative min-h-[24rem] md:min-h-[28rem] w-full md:w-5/12">
-					<Image
-						src="/images/the-solution.png"
-						className="rounded"
-						fill
-						alt="very busy map with many marker"
-					/>
-				</div>
+			<article className="flex sm:flex-row gap-12 flex-col-reverse items-center justify-between mb-20">
+				<Image
+					src="/images/the-solution.png"
+					className="rounded"
+					width={700}
+					height={521}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+					alt="very busy map with many marker"
+				/>
 
-				<div className="max-w-md mb-16  mb:md-0">
-					<p className="text-4xl font-medium mb-6">The solution</p>
+				<div className="max-w-lg mb-16  mb:md-0">
+					<h3 className="text-4xl font-medium mb-6">
+						{productTranslations.theSolutionTitle[lang]}
+					</h3>
 					<p className="text-2xl">
-						Our map service combines the benefits of maps and
-						calendars, facilitating effortless planning and route
-						optimization. Our goal is to help everyone make the most
-						out of their time and complete tasks satisfactorily.
+						{productTranslations.theSolutionText[lang]}
 					</p>
 				</div>
 			</article>

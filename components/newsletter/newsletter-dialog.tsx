@@ -9,10 +9,16 @@ import {
 	DialogTrigger
 } from '@/components/ui/dialog';
 import { gaEvent } from '@/lib/analytics/gtag-helper';
+import { Lang } from '@/types/lang.type';
 import { Button } from '../ui/button';
 import NewsletterForm from './newsletter-form';
+import { newsletterDialogTranslations } from './translations';
 
-const NewsletterDialog = () => {
+type NewsletterDialogProp = {
+	lang: Lang;
+};
+
+const NewsletterDialog = ({ lang }: NewsletterDialogProp) => {
 	const handleDialogOpen = () => {
 		gaEvent({
 			action: 'engagement',
@@ -25,18 +31,20 @@ const NewsletterDialog = () => {
 	return (
 		<Dialog>
 			<DialogTrigger asChild onClick={() => handleDialogOpen()}>
-				<Button size="lg" className="text-lg">
-					Sign up for our newsletter
+				<Button size="lg" className="text-lg md:text-2xl">
+					{newsletterDialogTranslations.signupButtonText[lang]}
 				</Button>
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
-					<DialogTitle>Join our newsletter</DialogTitle>
-					<DialogDescription>
-						Don't miss the latest updates and opportunities.
-					</DialogDescription>
-					<NewsletterForm />
+					<DialogTitle>
+						{newsletterDialogTranslations.dialogTitle[lang]}
+					</DialogTitle>
 				</DialogHeader>
+				<DialogDescription className="mb-4">
+					{newsletterDialogTranslations.dialogDescriptionText[lang]}
+				</DialogDescription>
+				<NewsletterForm lang={lang} />
 			</DialogContent>
 		</Dialog>
 	);

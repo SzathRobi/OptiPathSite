@@ -1,3 +1,4 @@
+import { Lang } from '@/types/lang.type';
 import {
 	Card,
 	CardContent,
@@ -6,22 +7,26 @@ import {
 	CardTitle
 } from '../ui/card';
 import NewsletterForm from './newsletter-form';
+import { newsletterTranslations } from './translations';
 
-const Newsletter = () => {
+type NewsletterProps = {
+	lang: Lang;
+};
+
+const Newsletter = ({ lang }: NewsletterProps) => {
 	return (
 		<section className="mb-48 md:mb-64">
 			<Card className="mx-auto max-w-5xl p-0 md:p-8">
 				<CardHeader className="mb-4">
 					<CardTitle className="text-center text-xl mb-2 md:mb-0 md:text-2xl">
-						Newsletter
+						{newsletterTranslations.newsletterTitle[lang]}
 					</CardTitle>
 					<CardDescription className="max-w-3xl mx-auto text-center text-lg md:text-xl">
-						Stay up-to-date! Join our newsletter to be the first to
-						learn about fresh developments and opportunities!
+						{newsletterTranslations.newsletterText[lang]}
 					</CardDescription>
 				</CardHeader>
 				<CardContent className="max-w-3xl mx-auto flex items-center justify-start">
-					<NewsletterForm />
+					<NewsletterForm lang={lang} />
 				</CardContent>
 			</Card>
 		</section>

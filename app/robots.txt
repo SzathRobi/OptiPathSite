@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /datenschutzrichtlinie/
+Disallow: /adatvedelmi-iranyelvek/
+Disallow: /privacy-policy/

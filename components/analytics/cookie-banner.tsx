@@ -6,8 +6,14 @@ import {
 	getLocalStorage,
 	setLocalStorage
 } from '@/lib/analytics/storage-helper';
+import { cookieBannerTranslations } from './translations';
+import { Lang } from '@/types/lang.type';
 
-export default function CookieBanner() {
+type CookieBannerProps = {
+	lang: Lang;
+};
+
+export default function CookieBanner({ lang }: CookieBannerProps) {
 	const [cookieConsent, setCookieConsent] = useState(false);
 
 	useEffect(() => {
@@ -18,33 +24,29 @@ export default function CookieBanner() {
 
 	useEffect(() => {
 		const newValue = cookieConsent ? 'granted' : 'denied';
+		if (!window.gtag) {
+			return;
+		}
 
 		window.gtag('consent', 'update', {
 			analytics_storage: newValue
 		});
 
 		setLocalStorage('cookie_consent', cookieConsent);
-
-		//For Testing
-		console.log('Cookie Consent: ', cookieConsent);
 	}, [cookieConsent]);
 
 	return (
 		<div
 			className={`${
 				cookieConsent != null ? 'hidden' : 'flex'
-			}  my-10 mx-auto max-w-max md:max-w-screen-sm
+			}  my-10 mx-auto max-w-max md:max-w-screen-md
                         fixed z-40 bottom-0 left-0 right-0 
                         flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
                          bg-gray-700 rounded-lg shadow`}
 		>
 			<div className="text-center">
-				<Link href="/info/cookies">
-					<p>
-						We use{' '}
-						<span className="font-bold text-sky-400">cookies</span>{' '}
-						on our site.
-					</p>
+				<Link href="/privacy-policy">
+					<p>{cookieBannerTranslations.cookiesText[lang]}</p>
 				</Link>
 			</div>
 
@@ -53,13 +55,13 @@ export default function CookieBanner() {
 					className="px-5 py-2 text-gray-300 rounded-md border-gray-900"
 					onClick={() => setCookieConsent(false)}
 				>
-					Decline
+					{cookieBannerTranslations.declineText[lang]}
 				</button>
 				<button
 					className="bg-gray-900 px-5 py-2 text-white rounded-lg"
 					onClick={() => setCookieConsent(true)}
 				>
-					Allow Cookies
+					{cookieBannerTranslations.allowText[lang]}
 				</button>
 			</div>
 		</div>

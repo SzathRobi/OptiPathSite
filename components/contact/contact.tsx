@@ -1,5 +1,6 @@
 'use client';
 
+import { Lang } from '@/types/lang.type';
 import Image from 'next/image';
 import { FormEvent, useState } from 'react';
 import { Button } from '../ui/button';
@@ -7,6 +8,7 @@ import { Card } from '../ui/card';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
+import { contactTranslations } from './translations';
 
 type BodyObject = {
 	email: string;
@@ -14,7 +16,11 @@ type BodyObject = {
 	name: string;
 };
 
-const Contact = () => {
+type ContactProps = {
+	lang: Lang;
+};
+
+const Contact = ({ lang }: ContactProps) => {
 	const [email, setEmail] = useState<string>('');
 	const [name, setName] = useState<string>('');
 	const [message, setMEssage] = useState<string>('');
@@ -45,7 +51,7 @@ const Contact = () => {
 				}
 			);
 
-			setFeedbackMessage('Your message was succesfully delivered!');
+			setFeedbackMessage(contactTranslations.successText[lang]);
 		} catch (error) {
 			setHasUnexpectedError(true);
 		} finally {
@@ -61,8 +67,10 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="mb-8 md:mb-64" id="contact-section">
-			<h3 className="text-2xl text-center mb-16 md:mb-24">Contact</h3>
+		<section className="mb-8 md:mb-48" id="contact-section">
+			<h3 className="text-2xl text-center mb-16 md:mb-24">
+				{contactTranslations.sectionTitle[lang]}
+			</h3>
 
 			<Card className="p-8 md:p-0 mx-auto max-w-5xl flex flex-col md:flex-row items-start flex-start">
 				<div className="mb-8 md:mb-0 w-full md:w-1/3 md:pl-16 md:py-24">
@@ -74,10 +82,7 @@ const Contact = () => {
 						/>
 					</div>
 					<p className="text-lg">
-						If you have any questions, please feel free to reach
-						out. If you're interested in the project and have ideas
-						for enhancing your future experience with the
-						application, don't hesitate to get in touch.
+						{contactTranslations.contactDescription[lang]}
 					</p>
 				</div>
 
@@ -86,7 +91,9 @@ const Contact = () => {
 					className="f-full md:w-2/3 md:px-16 md:py-24"
 				>
 					<div className="mb-8">
-						<Label htmlFor="email">Email</Label>
+						<Label htmlFor="email" className="ml-1 mb-1">
+							{contactTranslations.emailLabel[lang]}
+						</Label>
 						<Input
 							required
 							type="email"
@@ -98,7 +105,9 @@ const Contact = () => {
 						/>
 					</div>
 					<div className="mb-8">
-						<Label htmlFor="name">Name</Label>
+						<Label htmlFor="name" className="ml-1 mb-1">
+							{contactTranslations.nameLabel[lang]}
+						</Label>
 						<Input
 							required
 							id="name"
@@ -109,7 +118,9 @@ const Contact = () => {
 						/>
 					</div>
 					<div className="mb-8">
-						<Label htmlFor="message">Message</Label>
+						<Label htmlFor="message" className="ml-1">
+							{contactTranslations.messageLabel[lang]}
+						</Label>
 						<Textarea
 							required
 							id="message"
@@ -124,7 +135,7 @@ const Contact = () => {
 					</Button>
 					{hasUnexpectedError ? (
 						<p className="text-red-600">
-							Oops, something went wrong. Please try again later.
+							{contactTranslations.generalErrorText[lang]}
 						</p>
 					) : null}
 

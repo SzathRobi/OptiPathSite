@@ -1,18 +1,21 @@
 'use client';
 
+import { Lang } from '@/types/lang.type';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
+import { newsletterFormTranslations } from './translations';
 
 type BodyObject = {
 	email: string;
 };
 
 type NewsletterFormProps = {
+	lang: Lang;
 	setIsDialogOpen?: any;
 };
 
-const NewsletterForm = ({ setIsDialogOpen }: NewsletterFormProps) => {
+const NewsletterForm = ({ lang, setIsDialogOpen }: NewsletterFormProps) => {
 	const [email, setEmail] = useState<string>('');
 	const [isFormLoading, setIsFormLoading] = useState<boolean>(false);
 	const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
@@ -26,7 +29,7 @@ const NewsletterForm = ({ setIsDialogOpen }: NewsletterFormProps) => {
 		event.preventDefault();
 
 		if (email.length === 0) {
-			setErrorMessage('Email is required.');
+			setErrorMessage(newsletterFormTranslations.emailRequiredText[lang]);
 
 			setTimeout(() => {
 				setErrorMessage(null);
@@ -59,7 +62,7 @@ const NewsletterForm = ({ setIsDialogOpen }: NewsletterFormProps) => {
 				return;
 			}
 
-			setFeedbackMessage('You succesfully subscribed!');
+			setFeedbackMessage(newsletterFormTranslations.successText[lang]);
 			setEmail('');
 			setTimeout(() => {
 				setFeedbackMessage(null);
@@ -81,21 +84,26 @@ const NewsletterForm = ({ setIsDialogOpen }: NewsletterFormProps) => {
 				onSubmitNewsletterForm(event)
 			}
 		>
-			<div className="flex items-center justify-start mb-4">
+			<div className="flex flex-col md:flex-row items-center justify-start mb-4">
 				<Input
 					type="email"
 					placeholder="jane.doe@example.com"
 					value={email}
+					className="mb-4 md:mb-0"
 					onChange={(event: ChangeEvent<HTMLInputElement>) =>
 						setEmail(event.target.value)
 					}
 				/>
-				<Button>{isFormLoading ? 'Loading...' : 'Subscribe'}</Button>
+				<Button className="w-full md:w-auto">
+					{isFormLoading
+						? newsletterFormTranslations.loadingText[lang]
+						: newsletterFormTranslations.subscribeText[lang]}
+				</Button>
 			</div>
 
 			{hasUnexpectedError ? (
 				<p className="text-red-600 ml-2">
-					Oops, something went wrong. Please try again later.
+					{newsletterFormTranslations.generalErrorText[lang]}
 				</p>
 			) : null}
 

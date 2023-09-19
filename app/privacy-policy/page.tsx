@@ -85,8 +85,9 @@ const PrivacyPolicyPage = () => {
 							<p>
 								This Privacy Policy takes effect on August 10,
 								2023. We reserve the right to modify this
-								Privacy Policy at any time, so it's advisable to
-								check back occasionally for the latest versions.
+								Privacy Policy at any time, so it&apos;s
+								advisable to check back occasionally for the
+								latest versions.
 							</p>
 							<p>
 								If you have any questions or concerns about our

@@ -2,9 +2,9 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 import { pageview } from '@/lib/analytics/gtag-helper';
+import { useEffect } from 'react';
 
 export default function GoogleAnalytics() {
 	const pathname = usePathname();
@@ -13,18 +13,18 @@ export default function GoogleAnalytics() {
 	useEffect(() => {
 		const url = pathname + searchParams.toString();
 
-		pageview(process.env.GA_MEASUREMENT_ID || '', url);
-	}, [pathname, searchParams, process.env.GA_MEASUREMENT_ID]);
+		pageview(url);
+	}, [pathname, searchParams]);
 
 	return (
 		<>
 			<Script
-				strategy="afterInteractive"
+				strategy="lazyOnload"
 				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
 			/>
 			<Script
 				id="google-analytics"
-				strategy="afterInteractive"
+				strategy="lazyOnload"
 				dangerouslySetInnerHTML={{
 					__html: `
                 window.dataLayer = window.dataLayer || [];

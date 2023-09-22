@@ -21,12 +21,12 @@ export default function Home() {
 		<>
 			<Header lang="hu" />
 			<Image
-				src="/images/street-map.desktop.png"
-				layout="fill"
-				alt="street map"
-				objectFit="cover"
-				className="w-full h-screen"
 				priority
+				src="/images/street-map.desktop.png"
+				fill
+				sizes="100vw"
+				alt="street map"
+				className="object-cover"
 			/>
 			<main className="relative z-10 container py-56">
 				<Landing lang="hu" />

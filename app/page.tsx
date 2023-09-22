@@ -22,7 +22,7 @@ export default async function Home() {
 		<>
 			<Header lang="en" />
 			<Image
-				loading="eager"
+				priority
 				src="/images/street-map.desktop.png"
 				fill
 				sizes="100vw"

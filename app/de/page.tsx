@@ -20,10 +20,10 @@ export default function Home() {
 			<Image
 				priority
 				src="/images/street-map.desktop.png"
-				layout="fill"
+				fill
+				sizes="100vw"
 				alt="street map"
-				objectFit="cover"
-				className="w-full h-screen"
+				className="object-cover"
 			/>
 			<main className="relative z-10 container py-56">
 				<Landing lang="de" />

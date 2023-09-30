@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
+// TODO: itt valami url gondja lesz, majd meg kell nézni
 // export const metadata: Metadata = {
 // 	metadataBase: new URL(process.env.VERCEL_URL ?? 'http:localhost:3000')
 // };

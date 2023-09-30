@@ -19,12 +19,10 @@ export default function GoogleAnalytics() {
 	return (
 		<>
 			<Script
-				strategy="lazyOnload"
 				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
 			/>
 			<Script
 				id="google-analytics"
-				strategy="lazyOnload"
 				dangerouslySetInnerHTML={{
 					__html: `
                 window.dataLayer = window.dataLayer || [];

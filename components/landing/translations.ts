@@ -2,13 +2,13 @@ import { Translations } from '@/types/translation.type';
 
 export const landingTranslations: Translations = {
 	sectionTitle: {
-		de: 'Hektische Tage, nahtloser Zeitplan: Effizienz neu definiert.',
-		en: 'Bustling days, seamless schedule: redefining efficiency',
-		hu: 'Forgalmas napok, zökkenőmentes időbeosztás: a hatékonyság újradefiniálása.'
+		de: `Effiziente Zeitplanung und Routenoptimierung für Unternehmen`,
+		en: 'Streamline Business Time Management with Our Map Application',
+		hu: 'Időgazdálkodás megkönnyítése térkép alkalmazásunkkal'
 	},
 	sectionSubtitle: {
-		de: 'Die Kombination aus interaktiver Karte und Kalender für effizientere Tage und höhere Produktivität.',
-		en: 'The combination of interactive map and calendar for more efficient days and productivity.',
-		hu: 'Az interaktív térkép és naptár kombinációja hatékonyabb napokhoz és produktivitáshoz.'
+		de: 'Interaktive Karte und Kalender für Ihren geschäftlichen Erfolg',
+		en: 'Efficient and Productive Work with the Combination of Interactive Map and Calendar.',
+		hu: 'Az interaktív térkép és naptár kombinációja az időhatékony és produktív munkavégzéshez.'
 	}
 };

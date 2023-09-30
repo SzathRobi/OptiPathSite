@@ -15,7 +15,17 @@ const Footer = ({ lang }: FooterProps) => {
 		if (lang === 'hu') {
 			return `/${lang}/adatvedelmi-iranyelvek`;
 		}
-		return `/${lang}/privacy-policy`;
+		return `/privacy-policy`;
+	};
+
+	const getUnsubscribeNewsletterUrl = (): string => {
+		if (lang === 'de') {
+			return `/${lang}/newsletter/abmeldung`;
+		}
+		if (lang === 'hu') {
+			return `/${lang}/hirlevel/leiratkozas`;
+		}
+		return `/${lang}/newsletter/unsubscribe`;
 	};
 
 	return (

@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { gaEvent } from '@/lib/analytics/gtag-helper';
 import { Lang } from '@/types/lang.type';
+import { useState } from 'react';
 import { Button } from '../ui/button';
 import NewsletterForm from './newsletter-form';
 import { newsletterDialogTranslations } from './translations';
@@ -19,6 +20,9 @@ type NewsletterDialogProp = {
 };
 
 const NewsletterDialog = ({ lang }: NewsletterDialogProp) => {
+	const [newsletterDialogOpen, setNewsLetterDialogOpen] =
+		useState<boolean>(false);
+
 	const handleDialogOpen = () => {
 		gaEvent({
 			action: 'engagement',
@@ -29,7 +33,10 @@ const NewsletterDialog = ({ lang }: NewsletterDialogProp) => {
 	};
 
 	return (
-		<Dialog>
+		<Dialog
+			open={newsletterDialogOpen}
+			onOpenChange={setNewsLetterDialogOpen}
+		>
 			<DialogTrigger asChild onClick={() => handleDialogOpen()}>
 				<Button size="lg" className="text-lg md:text-2xl">
 					{newsletterDialogTranslations.signupButtonText[lang]}
@@ -44,7 +51,10 @@ const NewsletterDialog = ({ lang }: NewsletterDialogProp) => {
 				<DialogDescription className="mb-4">
 					{newsletterDialogTranslations.dialogDescriptionText[lang]}
 				</DialogDescription>
-				<NewsletterForm lang={lang} />
+				<NewsletterForm
+					lang={lang}
+					setNewsLetterDialogOpen={setNewsLetterDialogOpen}
+				/>
 			</DialogContent>
 		</Dialog>
 	);

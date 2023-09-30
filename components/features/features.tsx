@@ -22,7 +22,7 @@ const Features = ({ lang }: FeaturesProps) => {
 					src="/images/features.png"
 					width={1024}
 					height={720}
-					alt={featuresTranslations.featuresTitle[lang]}
+					alt={featuresTranslations.featuresImageAltText[lang]}
 				/>
 			</div>
 
@@ -31,6 +31,7 @@ const Features = ({ lang }: FeaturesProps) => {
 					<FeatureCard
 						key={featureItem.title.en}
 						featureItem={featureItem}
+						lang={lang}
 					/>
 				))}
 			</div>

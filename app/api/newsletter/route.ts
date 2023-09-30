@@ -3,7 +3,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import NewsletterWelcomeEmail from '@/emails/newsletter-welcome-email';
 import {
+	deleteNewsletterEmailById,
 	getNewsletterEmailById,
+	getNewsletterEmailByIdForDelete,
 	postNewsletterEmail
 } from '@/lib/mongo/newsletter';
 
@@ -43,6 +45,28 @@ export async function POST(req: NextRequest, res: NextResponse) {
 		});
 
 		return NextResponse.json({ dbRes, emailRes });
+	} catch (error) {
+		return NextResponse.json({ error });
+	}
+}
+
+export async function DELETE(req: NextRequest, res: NextResponse) {
+	const { email }: BodyProps = await req.json();
+
+	if (!email || email.length === 0) {
+		return NextResponse.json({ error: 'Email is required' });
+	}
+
+	try {
+		await getNewsletterEmailByIdForDelete(email);
+	} catch (error) {
+		return NextResponse.json({ error: 'We could not found this email' });
+	}
+
+	try {
+		const res = await deleteNewsletterEmailById(email);
+
+		return NextResponse.json({ data: res });
 	} catch (error) {
 		return NextResponse.json({ error });
 	}

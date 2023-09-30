@@ -9,6 +9,7 @@ import Newsletter from '@/components/newsletter/newsletter';
 import Product from '@/components/product/product';
 import Release from '@/components/release/release';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 const CookieBanner = dynamic(
 	() => import('@/components/analytics/cookie-banner'),
@@ -16,6 +17,23 @@ const CookieBanner = dynamic(
 		loading: () => <p>Loading...</p>
 	}
 );
+
+export const metadata: Metadata = {
+	authors: { name: 'OptiPath' },
+	description:
+		'OptiPath is your ultimate map and calendar-based route planner for efficient time management. Easily optimize your routes, synchronize events, and stay on top of your schedule. Try it now!',
+	keywords: [
+		'Route planner',
+		'Calendar-based scheduling',
+		'Time management',
+		'Efficient routes',
+		'Event synchronization',
+		'Productivity tool',
+		'Map and calendar app',
+		'OptiPath'
+	],
+	title: 'OptiPath - Map and Calendar-Based Route Planner and Time Management App'
+};
 
 export default async function Home() {
 	return (
@@ -26,7 +44,7 @@ export default async function Home() {
 				src="/images/street-map.desktop.png"
 				fill
 				sizes="100vw"
-				alt="street map"
+				alt="City Map and Business Time Management Services"
 				className="object-cover"
 			/>
 			<main className="relative z-10 container py-56">

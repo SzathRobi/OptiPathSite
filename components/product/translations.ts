@@ -12,9 +12,9 @@ export const productTranslations: Translations = {
 		hu: 'A probléma'
 	},
 	theProblemText: {
-		de: 'Das Fehlen einer optimalen Routenplanung und Zeitmanagement kann die effiziente Arbeitsabwicklung behindern.',
-		en: 'The lack of optimal route planning and time management can hinder efficient workflow.',
-		hu: 'Az optimális útvonaltervezés és időgazdálkodás hiánya hatékony munkafolyamatokat akadályozhatja.'
+		de: 'Effiziente Arbeitsprozesse erfordern eine optimale Routenplanung und Zeitmanagement. Oft müssen wir im Laufe eines Tages viele Standorte besuchen, sei es für städtische Angelegenheiten oder landesweite geschäftliche Aktivitäten. Dies kann dazu führen, dass unsere Zeit und unser Kraftstoff unnötig auf der Straße verschwendet werden.',
+		en: `Efficient Workflow Requires Optimal Route Planning and Time Management. It's essential for efficient work processes to have optimal route planning and time management. Often, daily tasks require us to reach multiple locations, whether it's for urban errands or nationwide business activities. As a result, our time and fuel can be wasted unnecessarily on the road.`,
+		hu: 'A hatékony munkafolyamatokhoz elengedhetetlen az optimális útvonaltervezés és időgazdálkodás. Gyakran előfordul, hogy napi feladatok során számos helyszínre kell eljutnunk, legyen az városi ügyintézés vagy országosan terjedő üzleti tevékenység. Emiatt előfordulhat, hogy az időnk és üzemanyagunk feleslegesen pazarlódik az úton.'
 	},
 	theSolutionTitle: {
 		de: 'Die Lösung',
@@ -22,9 +22,9 @@ export const productTranslations: Translations = {
 		hu: 'A megoldás'
 	},
 	theSolutionText: {
-		de: 'Unser Kartenservice kombiniert die Vorteile von Karten und Kalendern und erleichtert die mühelose Planung und Routenoptimierung. Unser Ziel ist es, jedem zu helfen, das Beste aus seiner Zeit herauszuholen und Aufgaben zufriedenstellend zu erledigen.',
-		en: 'Our map service combines the benefits of maps and calendars, facilitating effortless planning and route optimization. Our goal is to help everyone make the most out of their time and complete tasks satisfactorily.',
-		hu: 'Térképszolgáltatásunk egyesíti a térképek és naptárak előnyeit, segítve a könnyed tervezést és útvonaloptimalizálást. Célunk, hogy mindenki kihozhassa a legtöbbet az idejéből és elégedetten végezze el feladatait.'
+		de: 'OptiPath bietet eine einzigartige Kombination aus Karten und Kalendern und ermöglicht es den Benutzern, ihre Planung und Routenoptimierung mühelos zu gestalten. Unser Ziel ist einfach: Wir möchten es jedem ermöglichen, seine täglichen Aufgaben zeiteffizient und effektiv zu erledigen. Die Anwendung hilft bei der besseren Organisation Ihrer Arbeitsabläufe, sodass Sie Ihre Zeit optimal nutzen können, egal ob innerhalb einer Stadt oder auf nationaler Ebene.',
+		en: `The OptiPath map service uniquely combines the benefits of maps and calendars, ensuring users effortless planning and route optimization. Our goal is simple: to enable everyone to perform their daily tasks efficiently and with time to spare. The application helps improve workflow organization, allowing you to make better use of your time and travel with satisfaction, whether it's within the city or nationwide.`,
+		hu: 'Az OptiPath térképszolgáltatás egyedülálló módon egyesíti a térképek és naptárak előnyeit, biztosítva a felhasználók számára a könnyed tervezést és útvonaloptimalizálást. A célunk egyszerű: mindenki számára lehetővé tenni, hogy időtakarékosan és hatékonyan végezze el mindennapi feladatait. Az alkalmazás segít a munkafolyamatok jobb szervezésében, így Ön jobban kihasználhatja az idejét, és elégedetten teheti meg az útját, legyen az városon belül vagy országos szinten.'
 	},
 	trafficJamImageAltText: {
 		de: 'Großer Verkehrsstau in einer Stadt.',
@@ -32,13 +32,13 @@ export const productTranslations: Translations = {
 		hu: 'Nagy forgalmi dugó a városban.'
 	},
 	theProblemImageAltText: {
-		de: 'Sehr beschäftigter Mann mit vielen Aufgaben und Orten, die er besuchen muss.',
-		en: 'Very busy man with many tasks and places to go',
-		hu: 'Nagyon elfoglalt férfi sok feladattal és helyszínnel, ahová mennie kell.'
+		de: 'Unordentlicher Schreibtisch und chaotischer Kalender',
+		en: 'Cluttered Desk and Chaotic Calendar',
+		hu: 'Rendezetlen íróasztal és kaotikus naptár'
 	},
 	theSolutionImageAltText: {
-		de: 'Routenplanungsanwendung',
-		en: 'Route planner app',
-		hu: 'Útvonal tervező alkalmazás'
+		de: 'OptiPath-Benutzeroberfläche: Vereinfachte Routenplanung und Kalenderintegration',
+		en: `OptiPath's Interface: Simplified Route Planning and Calendar Integration`,
+		hu: 'Az OptiPath felülete: Egyszerűsített útvonaltervezés és naptárintegráció'
 	}
 };

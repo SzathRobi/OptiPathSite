@@ -8,8 +8,7 @@ import { Suspense } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Optipath',
-	description: 'Make your days easier.'
+	metadataBase: new URL(process.env.VERCEL_URL ?? 'http:localhost:3000')
 };
 
 export default function RootLayout({

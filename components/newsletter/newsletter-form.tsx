@@ -12,10 +12,13 @@ type BodyObject = {
 
 type NewsletterFormProps = {
 	lang: Lang;
-	setIsDialogOpen?: any;
+	setNewsLetterDialogOpen?: any;
 };
 
-const NewsletterForm = ({ lang, setIsDialogOpen }: NewsletterFormProps) => {
+const NewsletterForm = ({
+	lang,
+	setNewsLetterDialogOpen
+}: NewsletterFormProps) => {
 	const [email, setEmail] = useState<string>('');
 	const [isFormLoading, setIsFormLoading] = useState<boolean>(false);
 	const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
@@ -54,7 +57,16 @@ const NewsletterForm = ({ lang, setIsDialogOpen }: NewsletterFormProps) => {
 
 			if (data.error) {
 				setIsFormLoading(false);
-				setErrorMessage(data.error);
+
+				if (data.error === 'Email alredy exist') {
+					setErrorMessage(
+						newsletterFormTranslations.emailAlredyExistText[lang]
+					);
+				} else {
+					setErrorMessage(
+						newsletterFormTranslations.generalErrorText[lang]
+					);
+				}
 
 				setTimeout(() => {
 					setErrorMessage(null);
@@ -66,9 +78,7 @@ const NewsletterForm = ({ lang, setIsDialogOpen }: NewsletterFormProps) => {
 			setEmail('');
 			setTimeout(() => {
 				setFeedbackMessage(null);
-				if (setIsDialogOpen) {
-					setIsDialogOpen(false);
-				}
+				setNewsLetterDialogOpen && setNewsLetterDialogOpen(false);
 			}, 3000);
 		} catch (error) {
 			setHasUnexpectedError(true);

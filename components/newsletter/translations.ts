@@ -37,6 +37,11 @@ export const newsletterFormTranslations: Translations = {
 		en: 'Email is required.',
 		hu: 'Az e-mail cím megadása kötelező.'
 	},
+	emailAlredyExistText: {
+		de: 'E-Mail existiert bereits.',
+		en: 'Email already exist.',
+		hu: 'Az email cím már létezik.'
+	},
 	generalErrorText: {
 		de: 'Hoppla, es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.',
 		en: 'Oops, something went wrong. Please try again later.',
@@ -56,5 +61,38 @@ export const newsletterFormTranslations: Translations = {
 		de: 'Abonnieren',
 		en: 'Subscribe...',
 		hu: 'Feliratkozás'
+	}
+};
+
+export const unsubscribeFormTranslations: Translations = {
+	emailRequiredText: {
+		de: 'Die E-Mail-Adresse ist erforderlich.',
+		en: 'Email is required.',
+		hu: 'Az e-mail cím megadása kötelező.'
+	},
+	emailNotFoundText: {
+		de: 'Wir konnten diese E-Mail-Adresse nicht finden.',
+		en: 'We could not find this email.',
+		hu: 'Nem találjuk ezt az e-mail címet.'
+	},
+	generalErrorText: {
+		de: 'Hoppla, es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.',
+		en: 'Oops, something went wrong. Please try again later.',
+		hu: 'Hoppá, valami hiba történt. Kérjük, próbáld újra később.'
+	},
+	successText: {
+		de: 'Sie haben sich erfolgreich abgemeldet!',
+		en: 'You succesfully unsubscribed!',
+		hu: 'Sikeresen leiratkozott!'
+	},
+	loadingText: {
+		de: 'Laden',
+		en: 'Loading...',
+		hu: 'Betöltés'
+	},
+	unsubscribeText: {
+		de: 'Abmelden',
+		en: 'UnSubscribe...',
+		hu: 'Leiratkozás'
 	}
 };

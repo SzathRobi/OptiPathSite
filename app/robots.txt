@@ -1,5 +1,10 @@
 User-Agent: *
 Allow: /
-Disallow: /datenschutzrichtlinie/
-Disallow: /adatvedelmi-iranyelvek/
+Allow: /de/
+Allow: /hu/
+Disallow: /de/datenschutzrichtlinie/
+Disallow: /hu/adatvedelmi-iranyelvek/
 Disallow: /privacy-policy/
+Disallow: /de/newsletter/abmeldung/
+Disallow: /hu/hirlevel/leiratkozas/
+Disallow: /newsletter/unsubscribe/

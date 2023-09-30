@@ -20,9 +20,11 @@ export default function GoogleAnalytics() {
 		<>
 			<Script
 				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
+				strategy="afterInteractive"
 			/>
 			<Script
 				id="google-analytics"
+				strategy="afterInteractive"
 				dangerouslySetInnerHTML={{
 					__html: `
                 window.dataLayer = window.dataLayer || [];

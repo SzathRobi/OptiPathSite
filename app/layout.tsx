@@ -7,9 +7,9 @@ import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-	metadataBase: new URL(process.env.VERCEL_URL ?? 'http:localhost:3000')
-};
+// export const metadata: Metadata = {
+// 	metadataBase: new URL(process.env.VERCEL_URL ?? 'http:localhost:3000')
+// };
 
 export default function RootLayout({
 	children

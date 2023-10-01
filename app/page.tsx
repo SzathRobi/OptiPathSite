@@ -56,7 +56,7 @@ export default async function Home() {
 				<Contact lang="en" />
 			</main>
 			<Footer lang="en" />
-			<CookieBanner lang="hu" />
+			<CookieBanner lang="en" />
 		</>
 	);
 }

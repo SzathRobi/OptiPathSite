@@ -1,10 +1,9 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
-
-import { pageview } from '@/lib/analytics/gtag-helper';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
+import { pageview } from '@/lib/analytics/gtag-helper';
 
 export default function GoogleAnalytics() {
 	const pathname = usePathname();
@@ -19,8 +18,8 @@ export default function GoogleAnalytics() {
 	return (
 		<>
 			<Script
-				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
 				strategy="afterInteractive"
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
 			/>
 			<Script
 				id="google-analytics"
@@ -35,7 +34,7 @@ export default function GoogleAnalytics() {
                     'analytics_storage': 'denied'
                 });
                 
-                gtag('config', '${process.env.GA_MEASUREMENT_ID}', {
+                gtag('config', ${process.env.GA_MEASUREMENT_ID}, {
                     page_path: window.location.pathname,
                 });
                 `

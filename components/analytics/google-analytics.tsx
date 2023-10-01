@@ -19,7 +19,7 @@ export default function GoogleAnalytics() {
 		<>
 			<Script
 				strategy="afterInteractive"
-				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
+				src={`https://www.googletagmanager.com/gtag/js?id=G-287YPLP2CZ`}
 			/>
 			<Script
 				id="google-analytics"
@@ -34,7 +34,7 @@ export default function GoogleAnalytics() {
                     'analytics_storage': 'denied'
                 });
                 
-                gtag('config', ${process.env.GA_MEASUREMENT_ID}, {
+                gtag('config', G-287YPLP2CZ, {
                     page_path: window.location.pathname,
                 });
                 `

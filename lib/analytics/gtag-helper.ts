@@ -3,7 +3,7 @@ export const pageview = (url: string) => {
 		return;
 	}
 
-	window.gtag('config', process.env.GA_MEASUREMENT_ID ?? 'ga-test', {
+	window.gtag('config', 'G-287YPLP2CZ', {
 		page_path: url
 	});
 };
